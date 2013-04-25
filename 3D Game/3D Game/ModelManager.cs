@@ -589,11 +589,19 @@ namespace _3D_Game
 
         public void AddSpecialShots(Vector3 position, Vector3 direction) //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         {
-            specialShots.Add(new SpinningEnemy(Game.Content.Load<Model>(@"models\ammo"),
-                position, direction, 0, 0, 0));
+            if (models.Count >0)
+            {
+                Vector3 closestEnemyShip = models[0].world.Translation;
+                for (int j = 1; j < models.Count; ++j)
+                {
+                    if (closestEnemyShip.Z < models[j].world.Translation.Z)
+                        closestEnemyShip = models[j].world.Translation;
+                }
+                specialShots.Add(new Missile(Game.Content.Load<Model>(@"models\spaceship"),
+                    position, direction, 0, 0, 0, closestEnemyShip));
 
-            setSpecialShotpositionDirection(position, direction); // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
+                setSpecialShotpositionDirection(position, direction); // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+            }
         }
 
 
