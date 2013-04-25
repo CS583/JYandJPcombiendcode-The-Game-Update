@@ -11,9 +11,13 @@ Content\Fonts\SplashScreenFont.xnb
 Content\Fonts\SplashScreenFontLarge.xnb
 Content\Fonts\PowerUpFont.xnb
 Content\Models\ship1.xnb
-Content\Models\ship1_c_0.xnb
 Content\Models\ship2.xnb
+Content\Models\ship1_c_0.xnb
 Content\Models\ship2_c_0.xnb
+Content\Models\Mothership.xnb
+Content\Models\AllySpaceship.xnb
+Content\Models\EnemySpaceship.xnb
+Content\Textures\spaceship1.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

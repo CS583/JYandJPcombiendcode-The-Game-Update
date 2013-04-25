@@ -28,7 +28,7 @@ namespace _3D_Game
         int nextSpawnTime = 0;
         int timeSinceLastSpawn = 0;
         float maxRollAngle = MathHelper.Pi / 40;
-        public int playerHealth = 10;
+        public  double  playerHealth = 10;
 
         // Enemy count
         int enemiesThisLevel = 0;
@@ -88,6 +88,9 @@ namespace _3D_Game
         public
             Vector3 specialShotPosition;
             Vector3 specialShotDirection;
+
+        // The mother ship checking in game
+            int mothership = 0;
 
 
     
@@ -255,7 +258,9 @@ namespace _3D_Game
                     SpawnEnemy();
 
                     ++missedThisLevel;
-                    playerHealth--;
+                    playerHealth --;
+                    ((Game1)Game).PlayCue("hit1");
+
                     if (missedThisLevel >
                         levelInfoList[currentLevel].missesAllowed)
                     {
@@ -464,6 +469,17 @@ namespace _3D_Game
                     ++lifeAndWeapon;
                 }
             }
+
+            // This for planets and mother ships &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+            if (mothership == 0)
+            {
+                models.Add(new SpinningEnemy(
+                   Game.Content.Load<Model>(@"models\ship2"),
+                   new Vector3 (100,100, -200), new Vector3(0,0,0), 0, 0, 0));
+
+                ++mothership;
+            }
+
 
         }
 
@@ -780,12 +796,37 @@ namespace _3D_Game
                 // Update each shot
                 enemyShots[i].Update();
 
-                // If shot is out of bounds, remove it from game
-                if (enemyShots[i].GetWorld().Translation.Z >
+                // If shot is out of bounds, remove it from game ///////////////////// /////////////////////// still problim here
+
+
+                if ((enemyShots[i].GetWorld().Translation.X > (float)((Game1)Game).Window.ClientBounds.X + 200) ||
+                (enemyShots[i].GetWorld().Translation.X < (float)((Game1)Game).Window.ClientBounds.Width - 200))
+                                        
+                {
+                    enemyShots.RemoveAt(i);
+                    --i;
+                    playerHealth -= 0.2;
+                    ((Game1)Game).PlayCue("GlassScrunch4");
+                }
+
+                else if ((enemyShots[i].GetWorld().Translation.Y > (float)((Game1)Game).Window.ClientBounds.Y + 200) ||
+                 (enemyShots[i].GetWorld().Translation.Y < (float)((Game1)Game).Window.ClientBounds.Height - 200))
+                {
+                    enemyShots.RemoveAt(i);
+                    --i;
+                    playerHealth -= 0.2;
+                    ((Game1)Game).PlayCue("GlassScrunch4");
+                }
+                
+
+                else if (enemyShots[i].GetWorld().Translation.Z >
                     ((Game1)Game).camera.cameraPosition.Z + 200)
                 {
                     enemyShots.RemoveAt(i);
                     --i;
+                  //  playerHealth -= 0.2;
+                 //   ((Game1)Game).PlayCue("GlassScrunch4");
+
                 }
                 else
                 {
@@ -858,17 +899,19 @@ namespace _3D_Game
                             {
                                 playerHealth += 5;
                                 healthToCheckTheGeneratingFunction = 2;
+                                ((Game1)Game).PlayCue("LifeAndMissile");
                             }
                             else
                             {
                                 ((Game1)Game).specialList += 3;
+                                ((Game1)Game).PlayCue("LifeAndMissile");
                             }
 
                             lifeAndWeaponList.RemoveAt(k);
                             shots.RemoveAt(i);
                             --k;
                             ++colliedTrackForLifeAndWeapon;
-                            ((Game1)Game).PlayCue("Explosions");
+                           // ((Game1)Game).PlayCue("Explosions");
                             break;
 
                         }

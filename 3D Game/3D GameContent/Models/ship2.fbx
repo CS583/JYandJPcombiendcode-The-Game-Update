@@ -144,9 +144,9 @@ Objects:  {
         Properties60:  {
             Property: "QuaternionInterpolate", "bool", "",0
             Property: "Visibility", "Visibility", "A+",1
-            Property: "Lcl Translation", "Lcl Translation", "A+",0,6.5683849470588e-008,-1.50267124176025
-            Property: "Lcl Rotation", "Lcl Rotation", "A+",0,0,0
-            Property: "Lcl Scaling", "Lcl Scaling", "A+",1,1,1
+            Property: "Lcl Translation", "Lcl Translation", "A+",0,1.56697559356689,0
+            Property: "Lcl Rotation", "Lcl Rotation", "A+",90,0,0
+            Property: "Lcl Scaling", "Lcl Scaling", "A+",0.908876001834869,1,0.908876001834869
             Property: "RotationOffset", "Vector3D", "",0,0,0
             Property: "RotationPivot", "Vector3D", "",0,0,0
             Property: "ScalingOffset", "Vector3D", "",0,0,0
@@ -19058,7 +19058,7 @@ Objects:  {
             Property: "2D Magnifier Zoom", "Real", "A+",100
             Property: "2D Magnifier X", "Real", "A+",50
             Property: "2D Magnifier Y", "Real", "A+",50
-            Property: "CameraProjectionType", "enum", "",1
+            Property: "CameraProjectionType", "enum", "",0
             Property: "UseRealTimeDOFAndAA", "bool", "",0
             Property: "UseDepthOfField", "bool", "",0
             Property: "FocusSource", "enum", "",0
@@ -19076,7 +19076,7 @@ Objects:  {
         Culling: "CullingOff"
         TypeFlags: "Camera"
         GeometryVersion: 124
-        Position: 0,0,4000
+         Position: 0,0,4000
         Up: 0,1,0
         LookAt: 0,0,0
         ShowInfoOnMoving: 1

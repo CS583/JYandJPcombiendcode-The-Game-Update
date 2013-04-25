@@ -184,7 +184,7 @@ namespace _3D_Game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            crosshairTexture = Content.Load<Texture2D>(@"textures\spaceship_cockpit");
+            crosshairTexture = Content.Load<Texture2D>(@"textures\spaceship1");
             powerUpFont = Content.Load<SpriteFont>(@"fonts\PowerUpFont");
             //Load sound
             audioEngine = new AudioEngine(@"Content\Audio\GameAudio.xgs");
@@ -292,7 +292,7 @@ namespace _3D_Game
 
                 //Let the player know how much health he has
                 spriteBatch.DrawString(scoreFont, "Health: " + 
-                    modelManager.playerHealth,
+                   (int) modelManager.playerHealth,
                     new Vector2(Window.ClientBounds.Width-265, (Window.ClientBounds.Height)-150),
                     Color.Red);
 
@@ -304,9 +304,9 @@ namespace _3D_Game
                     spriteBatch.DrawString(powerUpFont,
                         powerUpText,
                         new Vector2((Window.ClientBounds.Width / 2) -
-                            (textSize.X / 2),
+                            (textSize.X / 2) ,
                             (Window.ClientBounds.Height / 2) -
-                            (textSize.Y / 2)),
+                            (textSize.Y / 2)-220),
                             Color.Goldenrod);
                 }
 

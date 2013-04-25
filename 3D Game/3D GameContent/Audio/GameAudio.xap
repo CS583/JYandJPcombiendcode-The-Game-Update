@@ -225,14 +225,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 0;
-    PC Bank Last Modified High = 0;
-    Header Last Modified Low = 0;
-    Header Last Modified High = 0;
-    Bank Last Revised Low = 1070273888;
-    Bank Last Revised High = 30286122;
+    Bank Last Revised Low = 1940661482;
+    Bank Last Revised High = 30293715;
 
     Wave
     {
@@ -305,29 +299,6 @@ Wave Bank
 
     Wave
     {
-        Name = Shot;
-        File = Shot.wav;
-        Build Settings Last Modified Low = 2565409712;
-        Build Settings Last Modified High = 30284653;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 2;
-            Sampling Rate = 44100;
-            Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 222032;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 248428032;
-            Last Modified High = 29945983;
-        }
-    }
-
-    Wave
-    {
         Name = Track1;
         File = Track1.wav;
         Build Settings Last Modified Low = 2565449712;
@@ -339,13 +310,13 @@ Wave Bank
             Channels = 2;
             Sampling Rate = 44100;
             Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 3603472;
+            Play Region Offset = 46;
+            Play Region Length = 9183232;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 268428032;
-            Last Modified High = 29945983;
+            Last Modified Low = 42322612;
+            Last Modified High = 30293178;
         }
     }
 
@@ -362,13 +333,13 @@ Wave Bank
             Channels = 2;
             Sampling Rate = 44100;
             Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 1801468;
+            Play Region Offset = 46;
+            Play Region Length = 39956480;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 268428032;
-            Last Modified High = 29945983;
+            Last Modified Low = 40072292;
+            Last Modified High = 30293178;
         }
     }
 
@@ -394,6 +365,98 @@ Wave Bank
             Last Modified High = 29931446;
         }
     }
+
+    Wave
+    {
+        Name = GlassScrunch4;
+        File = GlassScrunch4.wav;
+        Build Settings Last Modified Low = 2453447957;
+        Build Settings Last Modified High = 30293705;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 46;
+            Play Region Length = 414720;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3185215438;
+            Last Modified High = 30293177;
+        }
+    }
+
+    Wave
+    {
+        Name = hit1;
+        File = hit1.wav;
+        Build Settings Last Modified Low = 2453447957;
+        Build Settings Last Modified High = 30293705;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 46;
+            Play Region Length = 1974272;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3185764907;
+            Last Modified High = 30293177;
+        }
+    }
+
+    Wave
+    {
+        Name = LifeAndMissile;
+        File = LifeAndMissile.wav;
+        Build Settings Last Modified Low = 1116392546;
+        Build Settings Last Modified High = 30293712;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 75120;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3276193024;
+            Last Modified High = 29945456;
+        }
+    }
+
+    Wave
+    {
+        Name = Shot;
+        File = Shot.wav;
+        Build Settings Last Modified Low = 1912558477;
+        Build Settings Last Modified High = 30293715;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 46;
+            Play Region Length = 165888;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1258636428;
+            Last Modified High = 30293715;
+        }
+    }
 }
 
 Sound Bank
@@ -406,56 +469,9 @@ Sound Bank
 
     Sound
     {
-        Name = Shot;
-        Volume = -1200;
-        Pitch = 0;
-        Priority = 0;
-
-        Category Entry
-        {
-            Name = Default;
-        }
-
-        Track
-        {
-            Volume = 0;
-            Use Filter = 0;
-
-            Play Wave Event
-            {
-                Break Loop = 0;
-                Use Speaker Position = 0;
-                Use Center Speaker = 1;
-                New Speaker Position On Loop = 1;
-                Speaker Position Angle = 0.000000;
-                Speaker Position Arc = 0.000000;
-
-                Event Header
-                {
-                    Timestamp = 0;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Wave Entry
-                {
-                    Bank Name = Wave Bank;
-                    Bank Index = 0;
-                    Entry Name = Shot;
-                    Entry Index = 3;
-                    Weight = 255;
-                    Weight Min = 0;
-                }
-            }
-        }
-    }
-
-    Sound
-    {
         Name = Track1;
-        Volume = -1200;
-        Pitch = 0;
+        Volume = -460;
+        Pitch = 8;
         Priority = 0;
 
         Category Entry
@@ -491,7 +507,7 @@ Sound Bank
                     Bank Name = Wave Bank;
                     Bank Index = 0;
                     Entry Name = Track1;
-                    Entry Index = 4;
+                    Entry Index = 3;
                     Weight = 255;
                     Weight Min = 0;
                 }
@@ -502,8 +518,8 @@ Sound Bank
     Sound
     {
         Name = Track2;
-        Volume = -1200;
-        Pitch = 0;
+        Volume = -670;
+        Pitch = 41;
         Priority = 0;
 
         Category Entry
@@ -539,7 +555,7 @@ Sound Bank
                     Bank Name = Wave Bank;
                     Bank Index = 0;
                     Entry Name = Track2;
-                    Entry Index = 5;
+                    Entry Index = 4;
                     Weight = 255;
                     Weight Min = 0;
                 }
@@ -727,6 +743,53 @@ Sound Bank
                     Bank Name = Wave Bank;
                     Bank Index = 0;
                     Entry Name = RapidFire;
+                    Entry Index = 5;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = GlassScrunch4;
+        Volume = -500;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = GlassScrunch4;
                     Entry Index = 6;
                     Weight = 255;
                     Weight Min = 0;
@@ -735,23 +798,144 @@ Sound Bank
         }
     }
 
-    Cue
+    Sound
     {
-        Name = Shot;
+        Name = hit1;
+        Volume = 300;
+        Pitch = 237;
+        Priority = 0;
 
-        Variation
+        Category Entry
         {
-            Variation Type = 3;
-            Variation Table Type = 1;
-            New Variation on Loop = 0;
+            Name = Default;
         }
 
-        Sound Entry
+        Track
         {
-            Name = Shot;
-            Index = 0;
-            Weight Min = 0;
-            Weight Max = 255;
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = hit1;
+                    Entry Index = 7;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = LifeAndMissile;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = LifeAndMissile;
+                    Entry Index = 8;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Shot;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = Shot;
+                    Entry Index = 9;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
         }
     }
 
@@ -769,7 +953,7 @@ Sound Bank
         Sound Entry
         {
             Name = Track2;
-            Index = 2;
+            Index = 1;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -777,7 +961,7 @@ Sound Bank
         Sound Entry
         {
             Name = Track1;
-            Index = 1;
+            Index = 0;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -797,7 +981,7 @@ Sound Bank
         Sound Entry
         {
             Name = Explosion3;
-            Index = 3;
+            Index = 2;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -805,7 +989,7 @@ Sound Bank
         Sound Entry
         {
             Name = Explosion2;
-            Index = 4;
+            Index = 3;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -813,7 +997,7 @@ Sound Bank
         Sound Entry
         {
             Name = Explosion1;
-            Index = 5;
+            Index = 4;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -833,7 +1017,87 @@ Sound Bank
         Sound Entry
         {
             Name = RapidFire;
+            Index = 5;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = GlassScrunch4;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = GlassScrunch4;
             Index = 6;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = hit1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = hit1;
+            Index = 7;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = LifeAndMissile;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = LifeAndMissile;
+            Index = 8;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Shot;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Shot;
+            Index = 9;
             Weight Min = 0;
             Weight Max = 255;
         }
