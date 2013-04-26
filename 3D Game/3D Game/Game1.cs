@@ -29,6 +29,7 @@ namespace _3D_Game
         int specialShotCountdown = 0;
         public
         int specialList = 5;
+        int splashDelay = 0;
 
         // For random numbers
         public Random rnd { get; protected set; }
@@ -48,11 +49,14 @@ namespace _3D_Game
         Texture2D crosshairTexture;
 
         // variables for game stats
-        public enum GameState { START, PLAY, LEVEL_CHANGE, END, PAUSE }
-        GameState currentGameState = GameState.START;
+        public enum GameState { START, PLAY, LEVEL_CHANGE, END, PAUSE, MENU, ABOUT }
+        GameState currentGameState = GameState.MENU;
 
         SplashScreen splashScreen;
         int score = 0;
+
+        StartMenu startMenu;
+        About about;
 
         //font for score
         SpriteFont scoreFont;
@@ -72,11 +76,24 @@ namespace _3D_Game
 
         public void ChangeGameState(GameState state, int level)
         {
+            if(splashDelay < 0){
             currentGameState = state;
             CancelPowerUps();
 
             switch (currentGameState)
             {
+                case GameState.START:
+                    splashDelay = 10;
+                    splashScreen.SetData("Welcome to space Defender!",
+                        GameState.START);
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = true;
+                    splashScreen.Visible = true;
+                    startMenu.Visible = false;
+                    startMenu.Enabled = false;
+                    break;
+
                 case GameState.LEVEL_CHANGE:
                     splashScreen.SetData("Level " + (level + 1),
                         GameState.LEVEL_CHANGE);
@@ -127,6 +144,30 @@ namespace _3D_Game
                     trackCue.Stop(AudioStopOptions.Immediate);
                     break;
 
+                case GameState.MENU:
+                    splashDelay = 10;
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = false;
+                    splashScreen.Visible = false;
+                    startMenu.Visible = true;
+                    startMenu.Enabled = true;
+                    about.Visible = false;
+                    about.Enabled = false;
+                    break;
+
+                case GameState.ABOUT:
+                    splashDelay = 10;
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = false;
+                    splashScreen.Visible = false;
+                    startMenu.Visible = false;
+                    startMenu.Enabled = false;
+                    about.Visible = true;
+                    about.Enabled = true;
+                    break;
+            }
             }
         }
 
@@ -168,9 +209,18 @@ namespace _3D_Game
             //Splash screen component
             splashScreen = new SplashScreen(this);
             Components.Add(splashScreen);
-            splashScreen.SetData("Welcome to space Defender!",
-                currentGameState);
+            splashScreen.SetData("Welcome to space Defender!", currentGameState);
+            splashScreen.Visible = false;
 
+            //start menu
+            startMenu = new StartMenu(this);
+            Components.Add(startMenu);
+
+            //about page
+            about = new About(this);
+            Components.Add(about);
+            about.Visible = false;
+            about.Enabled = false;
 
             base.Initialize();
         }
@@ -238,7 +288,9 @@ namespace _3D_Game
             {
                 ChangeGameState(GameState.PLAY, 0);
             }
-            
+
+
+            splashDelay--;
 
             base.Update(gameTime);
         }

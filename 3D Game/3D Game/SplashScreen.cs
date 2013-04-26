@@ -18,7 +18,7 @@ namespace _3D_Game
     public class SplashScreen : Microsoft.Xna.Framework.DrawableGameComponent
     {
         string textToDraw;
-        string secondaryTextToDraw;
+        string secondaryTextToDraw = "";
         SpriteFont spriteFont;
         SpriteFont secondarySpriteFont;
         SpriteBatch spriteBatch;
