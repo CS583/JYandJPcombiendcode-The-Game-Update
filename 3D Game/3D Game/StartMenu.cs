@@ -20,14 +20,18 @@ namespace _3D_Game
         String Title = "SPACE SHOOTER";
         string Begin = "Begin";
         string About = "About";
+        string Instructions = "Instructions";
         string Exit = "Exit";
+        string menuDirections = "(use the arrow keys to navigate the menu)";
         SpriteFont spriteFont;
         SpriteFont secondarySpriteFont;
         SpriteBatch spriteBatch;
         Game1.GameState currentGameState;
         int selection = 1;
-        Color currentSelection = Color.Green;
+        Color defaultColor = Color.LightBlue;
+        Color currentSelection = Color.BlanchedAlmond;
         bool keyRelease;
+        Texture2D menuBackground;
 
         protected override void LoadContent()
         {
@@ -37,6 +41,8 @@ namespace _3D_Game
 
             //Create sprite batch
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
+
+            menuBackground = Game.Content.Load<Texture2D>(@"textures\herschel_s_swan");
 
             base.LoadContent();
         }
@@ -75,7 +81,14 @@ namespace _3D_Game
                  
                 // If we are in end game exit
                 if (selection == 3)
+                {
+                    ((Game1)Game).ChangeGameState(Game1.GameState.INSTRUCTIONS,0);
+                }
+
+                if (selection == 4)
+                {
                     Game.Exit();
+                }
             }
 
             //Did the player hit either arrow key?
@@ -86,13 +99,13 @@ namespace _3D_Game
                     selection--;
                     keyRelease = false;
                     if (selection < 1)
-                        selection = 3;
+                        selection = 4;
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
                 {
                     selection++;
                     keyRelease = false;
-                    if (selection > 3)
+                    if (selection > 4)
                         selection = 1;
                 }
             }
@@ -109,12 +122,24 @@ namespace _3D_Game
         {
             spriteBatch.Begin();
 
+            spriteBatch.Draw(menuBackground, new Rectangle(0, 0,
+                   Game.Window.ClientBounds.Width, Game.Window.ClientBounds.Height),
+                   null, Color.White, 0, Vector2.Zero,
+                   SpriteEffects.None, 0);
+
             // Draw main text
             spriteBatch.DrawString(spriteFont, Title,
                     new Vector2(Game.Window.ClientBounds.Width / 2
                         - spriteFont.MeasureString(Title).X / 2,
+                        Game.Window.ClientBounds.Height / 2 - 150),
+                        Color.Red);
+            
+            spriteBatch.DrawString(secondarySpriteFont, menuDirections,
+                    new Vector2(Game.Window.ClientBounds.Width / 2
+                        - spriteFont.MeasureString(menuDirections).X / 2 + 50,
                         Game.Window.ClientBounds.Height / 2 - 100),
-                        Color.Gold);
+                        Color.Red);
+
             if (selection == 1)
             {
                 spriteBatch.DrawString(secondarySpriteFont, Begin,
@@ -129,7 +154,7 @@ namespace _3D_Game
                     new Vector2(Game.Window.ClientBounds.Width / 2
                         - spriteFont.MeasureString(Begin).X / 2,
                         Game.Window.ClientBounds.Height / 2 - 0),
-                        Color.Gold);
+                        defaultColor);
             }
 
             if (selection == 2)
@@ -148,16 +173,36 @@ namespace _3D_Game
                         - secondarySpriteFont.MeasureString(
                         About).X / 2,
                         Game.Window.ClientBounds.Height / 2 + 50),
-                        Color.Gold);
+                        defaultColor);
             }
 
             if (selection == 3)
+            {
+                spriteBatch.DrawString(secondarySpriteFont, Instructions,
+                new Vector2(Game.Window.ClientBounds.Width / 2
+                    - secondarySpriteFont.MeasureString(
+                    Instructions).X / 2,
+                    Game.Window.ClientBounds.Height / 2 + 100),
+                    currentSelection);
+            }
+            else
+            {
+                spriteBatch.DrawString(secondarySpriteFont, Instructions,
+                new Vector2(Game.Window.ClientBounds.Width / 2
+                    - secondarySpriteFont.MeasureString(
+                    Instructions).X / 2,
+                    Game.Window.ClientBounds.Height / 2 + 100),
+                    defaultColor);
+            }
+
+
+            if (selection == 4)
             {
                 spriteBatch.DrawString(secondarySpriteFont, Exit,
                 new Vector2(Game.Window.ClientBounds.Width / 2
                     - secondarySpriteFont.MeasureString(
                     About).X / 2,
-                    Game.Window.ClientBounds.Height / 2 + 100),
+                    Game.Window.ClientBounds.Height / 2 + 150),
                     currentSelection);
             }
             else
@@ -166,8 +211,8 @@ namespace _3D_Game
                 new Vector2(Game.Window.ClientBounds.Width / 2
                     - secondarySpriteFont.MeasureString(
                     About).X / 2,
-                    Game.Window.ClientBounds.Height / 2 + 100),
-                    Color.Gold);
+                    Game.Window.ClientBounds.Height / 2 + 150),
+                    defaultColor);
             }
             
             spriteBatch.End();

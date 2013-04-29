@@ -1,10 +1,14 @@
 Content\Models\spaceship.xnb
 Content\Models\ammo.xnb
+Content\Models\Mothership.xnb
+Content\Models\AllySpaceship.xnb
+Content\Models\EnemySpaceship.xnb
 Content\Textures\Particle.xnb
 Content\Textures\Crosshair.xnb
 Content\Textures\ParticleColors.xnb
 Content\Textures\Stars.xnb
 Content\Textures\spaceship_cockpit.xnb
+Content\Textures\spaceship1.xnb
 Content\Effects\Particle.xnb
 Content\Fonts\ScoreFont.xnb
 Content\Fonts\SplashScreenFont.xnb
@@ -14,10 +18,7 @@ Content\Models\ship1.xnb
 Content\Models\ship2.xnb
 Content\Models\ship1_c_0.xnb
 Content\Models\ship2_c_0.xnb
-Content\Models\Mothership.xnb
-Content\Models\AllySpaceship.xnb
-Content\Models\EnemySpaceship.xnb
-Content\Textures\spaceship1.xnb
+Content\Textures\herschel_s_swan.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

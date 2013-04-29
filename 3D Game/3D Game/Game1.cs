@@ -49,7 +49,7 @@ namespace _3D_Game
         Texture2D crosshairTexture;
 
         // variables for game stats
-        public enum GameState { START, PLAY, LEVEL_CHANGE, END, PAUSE, MENU, ABOUT }
+        public enum GameState { START, PLAY, LEVEL_CHANGE, END, PAUSE, MENU, ABOUT, INSTRUCTIONS }
         GameState currentGameState = GameState.MENU;
 
         SplashScreen splashScreen;
@@ -57,6 +57,7 @@ namespace _3D_Game
 
         StartMenu startMenu;
         About about;
+        Instructions instructions;
 
         //font for score
         SpriteFont scoreFont;
@@ -154,6 +155,8 @@ namespace _3D_Game
                     startMenu.Enabled = true;
                     about.Visible = false;
                     about.Enabled = false;
+                    instructions.Visible = false;
+                    instructions.Enabled = false;
                     break;
 
                 case GameState.ABOUT:
@@ -166,6 +169,20 @@ namespace _3D_Game
                     startMenu.Enabled = false;
                     about.Visible = true;
                     about.Enabled = true;
+                    break;
+
+                case GameState.INSTRUCTIONS:
+                    splashDelay = 10;
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = false;
+                    splashScreen.Visible = false;
+                    startMenu.Visible = false;
+                    startMenu.Enabled = false;
+                    about.Visible = false;
+                    about.Enabled = false;
+                    instructions.Visible = true;
+                    instructions.Enabled = true;
                     break;
             }
             }
@@ -221,6 +238,13 @@ namespace _3D_Game
             Components.Add(about);
             about.Visible = false;
             about.Enabled = false;
+
+            //instructions page
+            instructions = new Instructions(this);
+            Components.Add(instructions);
+            instructions.Visible = false;
+            instructions.Enabled = false;
+
 
             base.Initialize();
         }
